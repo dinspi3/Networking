@@ -1,0 +1,41 @@
+
+Source : https://www.guru99.com/hub-vs-switch.html#2
+
+HUB :
+
+A hub stores various ports, so when a packet arrives at one port, it is copied to various other ports. 
+Hub works as a common connection point for devices in a network.
+
+1.A hub operates on the physical layer.
+2.Hubs operates as a Layer 1 devices per the OSI model.
+3.A network hub can't store MAC addresses.
+4.Its speed is up to 10 Mbps
+5.Does not use software	 and Not an intelligent device	
+
+Switch :
+
+A network switch is a computer networking device that connects various devices together on a single computer network
+ It may also be used to route information in the form of electronic data sent over networks.
+ Since the process of linking network segments is also called bridging, switches are usually referred to as bridging devices.
+
+1.A switch operates on the data link layer.
+2.Allow connecting multiple devices and ports.
+3.Uses frame & packet
+4.Speed 10/100 Mbps, 1 Gbps, 10 Gbps
+5.Mostly comes with 24 to 48 ports
+
+Router :
+
+Routers are computer networking devices that serve two primary functions: (1) create and maintain a local area network
+and (2) manage the data entering 
+and leaving the network as well as data moving inside of the network.
+
+1.Routers operate at Layer 3 (Network) of the OSI model.
+2.Router will offer NAT (Network address translation (NAT))), NetFlow and QoS Services	
+3.Store IP address in the routing table and maintain an address on its own.	
+4.In Router, every port has its own broadcast domain.	
+5.Router operations revolve around IP Addresses.	
+6.Routers can work within both wired and wireless network situations.	
+
+
+
