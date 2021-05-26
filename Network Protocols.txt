@@ -1,0 +1,67 @@
+
+TCP : 
+
+TCP/IP helps you to determine how a specific computer should be connected to the internet
+ and how you can transmit data between them. 
+It helps you to create a virtual network when multiple computer networks are connected.
+
+1. TCP is heavy-weight. 
+2.TCP needs three packets to set up a socket connection before any user data can be sent.
+3.Using handshake protocol like SYN, SYN-ACK, ACK
+4.TCP is reliable as it guarantees delivery of data to the destination router.
+5.Header size is 20 bytes
+
+UDP :
+
+UDP uses a simple transmission method without implied hand-shaking dialogues for ordering, reliability,
+or data integrity. 
+UDP also assumes that error checking 
+and correction is not important or performed in the application, 
+to avoid the overhead of such processing at the network interface level. 
+It is also compatible with packet broadcasts and multicasting.	
+
+1.UDP protocol has no fixed order because all packets are independent of each other.
+2.UDP is faster as error recovery is not attempted.
+3.Header size is 8 bytes.
+4.The delivery of data to the destination can't be guaranteed in UDP.
+5.No handshake (so connectionless protocol)
+
+RIP :
+
+Routing Information Protocol is used by routers to send data from one network to another
+
+MAC :
+
+Media Access Control, uniquely identifies a device on the network. 
+It is also known as a physical address or an Ethernet address. 
+A MAC address is made up of 6-byte parts
+
+DHCP :
+
+DHCP is short for Dynamic Host Configuration Protocol. Its main task is to assign an IP address to devices across the network automatically
+
+ARP :
+
+map a known IP address to a MAC layer address.
+
+Netstat :
+
+It provides useful information about the current TCP/IP settings of a connection.
+
+What common software problems can lead to network defects? :
+
+Client-server problems
+Application conflicts
+Error in configuration
+Protocol mismatch
+Security issues
+User policy and rights issues
+
+ICMP :
+
+ It provides messaging and communication for protocols within the TCP/IP stack.
+ This is also the protocol that manages error messages that are used by network tools such as PING.
+
+
+	
+
