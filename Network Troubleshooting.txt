@@ -1,0 +1,112 @@
+
+https://www.tecmint.com/basic-network-troubleshooting-tips/
+
+https://linuxcontainers.org/lxd/try-it/
+
+===================================================================================
+
+
+
+ 1. Physical Layer :
+============================================================================
+Most problems begin here and are mostly caused by:
+
+Unplugged network/ethernet cable
+Damaged network/ethernet cable
+Missing or damaged network card
+In this layer, the questions that come to mind are:
+
+“Is the network cable plugged in?”
+“Is the physical network link up?”
+“Do you have an IP address?”
+“Can you ping your default gateway IP?”
+“Can you ping your DNS server?”
+
+=======================================================================================
+
+To check the status of your network interfaces :
+
+ip link show
+
+==================================================================
+
+you can bring the interface up using the command :
+
+ sudo ip link set enp0s3 up
+
+==============================================================================================
+
+Alternatively, you can run the ip address command as follows to check your system’s IP address
+
+ip address
+=======================================================================================================
+
+======================================================================================================
+
+To check the DNS servers you are using, run the following command on systemd systems
+
+systemd-resolve --status
+
+( nmcli dev list || nmcli dev show ) 2>/dev/null | grep DNS
+=============================================================================================================
+
+2.Data Link Layer
+
+Essentially, the data link layer determines the data format on the network. This is where the communication of data frames between hosts takes place. The predominant protocol in this layer is the ARP ( Address Resolution Protocol).
+
+ARP is responsible for discovering link-layer addresses and performs mapping of IPv4 addresses on layer 3 to MAC addresses. Usually, when a host contacts the default gateway, chances are that it already has the host’s IP, but not the MAC addresses.
+
+The ARP protocol bridges the gap between layer 3 and layer 2 by translating the 32-bit IPv4 addresses on layer 3 to 48-bit MAC addresses on layer 2 and vice-versa.
+
+============================================================================================================================
+
+To check your ARP table, run the command:
+
+ip neighbor show
+
+As you can notice, the router’s MAC address is populated. If there’s a resolution problem, the command returns no output.
+
+============================================================================================================
+
+3.Layer 3: Network / Internet Layer
+
+This is the layer that you exclusively work with IPv4 addresses that are familiar with system administrators. It provides multiple protocols such as ICMP and ARP which we have covered and others such as RIP (Routing Information Protocol).
+
+Some of the common problems include device misconfiguration or problems with network devices such as routers and switches. 
+A good place to start troubleshooting is to check if your system has picked an IP address as follows:
+
+ifconfig
+
+ ping command to check internet connectivity by sending an ICMP echo packet to Google’s DNS. The -c flag denotes the number of packets being sent.
+
+ping 8.8.8.8 -c 4
+
+The output shows a positive reply from Google’s DNS with zero packet loss. If you are having an intermittent connection, 
+you can check which point the packets are being dropped using the traceroute command as follows.
+
+traceroute google.com
+
+4.Transport Layer
+
+The transport layer handles data transmission using TCP and UDP protocols. Just to recap, 
+TCP is a connection-oriented protocol while UDP is connectionless.
+ Running application listen on sockets which comprise of ports and IP addresses.
+
+Common problems that may occur including blocked TCP ports which may be required by applications. 
+If you have a web server and you want to verify its running state, 
+use the netstat or ss command to check if the web service is listening to port 80
+
+ sudo netstat -pnltu | grep 80
+
+====================================================================================================================
+
+5. Application Layer
+
+we have the application layer which is the closest to the end-users and allows them to interact with the application software.
+ The application layer is rich with protocols such as
+ HTTP, HTTPS, POP3, IMAP, DNS, RDP, SSH, SNMP, and NTP to mention a few.
+
+
+
+
+
